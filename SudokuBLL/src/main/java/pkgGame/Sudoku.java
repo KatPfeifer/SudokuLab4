@@ -267,7 +267,7 @@ public class Sudoku extends LatinSquare {
 	 *            given value
 	 * @return - returns 'true' if the proposed value is valid for the row and column
 	 */
-	public boolean isValidValue(int iRow,int iCol,  int iValue) {
+	public boolean isValidValue(int iRow,int iCol, int iValue) {
 		
 		if (doesElementExist(super.getRow(iRow),iValue))
 		{
@@ -423,5 +423,19 @@ public class Sudoku extends LatinSquare {
 		return (super.doesElementExist(getRegion(iCol,iRow), iValue) ? false:true);
 	}
 	
+	public boolean isValidValue2(int iCol, int iRow, int iValue) {
+		if (isValidColumnValue(iCol, iValue)==false) {
+			return false;
+		}
+		if (isValidRowValue(iRow, iValue)==false) {
+			return false;
+		}
+		if (isValidRegionValue(iRow, iCol, iValue)==false) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	
+	}
 }

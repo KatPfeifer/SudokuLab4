@@ -9,7 +9,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class SudokuTest {
-
+ /*
 	private void PrintStars() {
 		for (int i = 0; i < 50; i++)
 			System.out.print("*");
@@ -122,9 +122,47 @@ public class SudokuTest {
 		}
 
 	}
+	*/
 
+	@Test
+	public void isValidColumnValuetest() throws Exception {
+		int[][] mySquare = { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
+		Sudoku s = new Sudoku(mySquare);
+		assertFalse(s.isValidColumnValue(2, 1));
+	}
 
+	@Test
+	public void isValidColumnValuetest2() throws Exception {
+		int [][] mySquare = {{5,3,4,6,7,8,9,1,2},{6,7,2,1,9,5,4,3,8},{1,9,8,3,4,2,5,6,7},{8,5,9,7,6,1,4,2,3},{4,2,6,8,5,3,7,9,1},{7,1,3,9,2,4,8,5,6},{9,6,1,5,3,7,2,8,4},{2,8,7,4,1,9,6,3,5},{3,4,5,2,8,6,1,7,9}};
+		Sudoku su=new Sudoku(mySquare);
+		assertTrue(su.isValidColumnValue(7,11));
+	}
+	
+	@Test
+	public void isValidRowValuetest() throws Exception {
+		int[][] mySquare = { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
+		Sudoku sud = new Sudoku(mySquare);
+		assertFalse(sud.isValidRowValue(2, 1));
+	}
 
-
-
+	@Test
+	public void isValidRowValuetest2() throws Exception {
+		int [][] mySquare = {{5,3,4,6,7,8,9,1,2},{6,7,2,1,9,5,4,3,8},{1,9,8,3,4,2,5,6,7},{8,5,9,7,6,1,4,2,3},{4,2,6,8,5,3,7,9,1},{7,1,3,9,2,4,8,5,6},{9,6,1,5,3,7,2,8,4},{2,8,7,4,1,9,6,3,5},{3,4,5,2,8,6,1,7,9}};
+		Sudoku sudo=new Sudoku(mySquare);
+		assertTrue(sudo.isValidRowValue(7,11));
+	}
+	
+	@Test
+	public void isValidRegionValueTest() throws Exception {
+		int[][] mySquare = { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
+		Sudoku sudok=new Sudoku(mySquare);
+		assertFalse(sudok.isValidRegionValue(1,2,3));
+	}
+	
+	@Test 
+	public void isValidRegionValueTest2() throws Exception {
+		int [][] mySquare = {{5,3,4,6,7,8,9,1,2},{6,7,2,1,9,5,4,3,8},{1,9,8,3,4,2,5,6,7},{8,5,9,7,6,1,4,2,3},{4,2,6,8,5,3,7,9,1},{7,1,3,9,2,4,8,5,6},{9,6,1,5,3,7,2,8,4},{2,8,7,4,1,9,6,3,5},{3,4,5,2,8,6,1,7,9}};
+		Sudoku sudoku = new Sudoku(mySquare);
+		assertTrue(sudoku.isValidRegionValue(8,3,11));
+	}
 }

@@ -410,4 +410,18 @@ public class Sudoku extends LatinSquare {
 			ar[i] = a;
 		}
 	}
+	
+	protected boolean isValidColumnValue(int iCol, int iValue) {
+		return (super.doesElementExist(getColumn(iCol),iValue) ? false:true);
+	}
+	 
+	protected boolean isValidRowValue(int iRow, int iValue) {
+		return (super.doesElementExist(getRow(iRow),iValue) ? false:true);
+	}
+	
+	protected boolean isValidRegionValue(int iRow, int iCol, int iValue) {
+		return (super.doesElementExist(getRegion(iCol,iRow), iValue) ? false:true);
+	}
+	
+	
 }

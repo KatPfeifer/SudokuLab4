@@ -165,4 +165,12 @@ public class SudokuTest {
 		Sudoku sudoku = new Sudoku(mySquare);
 		assertTrue(sudoku.isValidRegionValue(8,3,11));
 	}
+	
+	@Test
+	public void fillRemainingTest() throws Exception {
+		int [][] mySquare = { { 1, 2, 3, 0}, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
+		Sudoku p = new Sudoku(mySquare);
+		assertTrue(p.fillRemaining(0, 3));
+		p.PrintPuzzle();
+	}
 }

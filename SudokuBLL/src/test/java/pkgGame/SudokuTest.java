@@ -124,6 +124,7 @@ public class SudokuTest {
 	}
 	*/
 
+	/*
 	@Test
 	public void isValidColumnValuetest() throws Exception {
 		int[][] mySquare = { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
@@ -172,5 +173,11 @@ public class SudokuTest {
 		Sudoku p = new Sudoku(mySquare);
 		assertTrue(p.fillRemaining(0, 3));
 		p.PrintPuzzle();
+	}
+	*/
+	
+	@Test
+	public void test() throws Exception {
+		Sudoku puzzle = new Sudoku(4);
 	}
 }

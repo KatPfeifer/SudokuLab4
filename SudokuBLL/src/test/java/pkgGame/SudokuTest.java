@@ -9,7 +9,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class SudokuTest {
- /*
+
 	private void PrintStars() {
 		for (int i = 0; i < 50; i++)
 			System.out.print("*");
@@ -122,7 +122,7 @@ public class SudokuTest {
 		}
 
 	}
-	*/
+
 
 	/*
 	@Test
@@ -167,17 +167,108 @@ public class SudokuTest {
 		assertTrue(sudoku.isValidRegionValue(8,3,11));
 	}
 	
-	@Test
-	public void fillRemainingTest() throws Exception {
-		int [][] mySquare = { { 1, 2, 3, 0}, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
-		Sudoku p = new Sudoku(mySquare);
-		assertTrue(p.fillRemaining(0, 3));
-		p.PrintPuzzle();
-	}
 	*/
+	@Test
+	public void testSudoku3() throws Exception {
+		Sudoku puzzle = new Sudoku(9);
+		puzzle.PrintPuzzle();
+		assertTrue(puzzle.isSudoku());
+	}
+	
+/*	
+	@Test
+	public void testSudoku() throws Exception {
+		//tests for randomness by calculating the number of times each number appears in the first cell of region 1
+		//if puzzle was generated randomly, these numbers would be quite different from each other
+		int count1=0;
+		int count2=0;
+		int count3=0;
+		int count4=0;
+		int count5=0;
+		int count6=0;
+		int count7=0;
+		int count8=0;
+		int count9=0;
+		for (int i=1; i<=10000; i++) {
+		Sudoku puzzle = new Sudoku(9);
+		switch (puzzle.getPuzzle()[0][3]) {
+			case 1: count1++;
+				break;
+			case 2: count2++;
+				break;
+			case 3: count3++;
+				break;
+			case 4: count4++;
+				break;
+			case 5: count5++;
+				break;
+			case 6: count6++;
+				break;
+			case 7: count7++;
+				break;
+			case 8: count8++;
+				break;
+			default: count9++;
+				break;
+		}
+		}
+		System.out.println("number of ones = "+count1);
+		System.out.println("number of twos = "+count2);
+		System.out.println("number of threes = "+count3);
+		System.out.println("number of fours = "+count4);
+		System.out.println("number of fives = "+count5);
+		System.out.println("number of sixes = "+count6);
+		System.out.println("number of sevens = "+count7);
+		System.out.println("number of eights = "+count8);
+		System.out.println("number of nines = "+count9);
+	}
 	
 	@Test
-	public void test() throws Exception {
-		Sudoku puzzle = new Sudoku(4);
+	public void testSudoku2() throws Exception {
+		//tests for randomness by calculating the number of times each number appears second to last cell of the final row
+		//if puzzle was generated randomly, these numbers would be quite different from each other
+		//tests do take a bit of time to complete
+		int count1=0;
+		int count2=0;
+		int count3=0;
+		int count4=0;
+		int count5=0;
+		int count6=0;
+		int count7=0;
+		int count8=0;
+		int count9=0;
+		for (int i=1; i<=10000; i++) {
+		Sudoku puzzle = new Sudoku(9);
+		switch (puzzle.getPuzzle()[8][7]) {
+			case 1: count1++;
+				break;
+			case 2: count2++;
+				break;
+			case 3: count3++;
+				break;
+			case 4: count4++;
+				break;
+			case 5: count5++;
+				break;
+			case 6: count6++;
+				break;
+			case 7: count7++;
+				break;
+			case 8: count8++;
+				break;
+			default: count9++;
+				break;
+		}
+		}
+		System.out.println("number of ones = "+count1);
+		System.out.println("number of twos = "+count2);
+		System.out.println("number of threes = "+count3);
+		System.out.println("number of fours = "+count4);
+		System.out.println("number of fives = "+count5);
+		System.out.println("number of sixes = "+count6);
+		System.out.println("number of sevens = "+count7);
+		System.out.println("number of eights = "+count8);
+		System.out.println("number of nines = "+count9);
 	}
+	*/
 }

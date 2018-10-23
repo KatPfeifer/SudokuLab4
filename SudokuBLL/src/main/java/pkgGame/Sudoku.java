@@ -70,7 +70,6 @@ public class Sudoku extends LatinSquare {
 		FillDiagonalRegions();
 		SetCells();
 		fillRemaining(cells.get(Objects.hash(0,iSqrtSize)));
-		PrintPuzzle();
 	}
 
 	/**
@@ -328,7 +327,7 @@ public class Sudoku extends LatinSquare {
 	private void FillDiagonalRegions() {
 
 		for (int i = 0; i < iSize; i = i + iSqrtSize) {
-			System.out.println("Filling region: " + getRegionNbr(i, i));
+			//System.out.println("Filling region: " + getRegionNbr(i, i));
 			SetRegion(getRegionNbr(i, i));
 			ShuffleRegion(getRegionNbr(i, i));
 		}
@@ -561,6 +560,7 @@ public class Sudoku extends LatinSquare {
 		}
 		return possibleValues;
 	}
+
 	
 	public void SetCells() {
 		for (int i=0; i<iSize; i++) {

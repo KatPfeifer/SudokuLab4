@@ -124,7 +124,6 @@ public class SudokuTest {
 	}
 
 
-	/*
 	@Test
 	public void isValidColumnValuetest() throws Exception {
 		int[][] mySquare = { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 2, 1, 4, 3 }, { 4, 3, 2, 1 } };
@@ -167,7 +166,6 @@ public class SudokuTest {
 		assertTrue(sudoku.isValidRegionValue(8,3,11));
 	}
 	
-	*/
 	@Test
 	public void testSudoku3() throws Exception {
 		Sudoku puzzle = new Sudoku(9);
@@ -175,7 +173,6 @@ public class SudokuTest {
 		assertTrue(puzzle.isSudoku());
 	}
 	
-/*	
 	@Test
 	public void testSudoku() throws Exception {
 		//tests for randomness by calculating the number of times each number appears in the first cell of region 1
@@ -221,6 +218,7 @@ public class SudokuTest {
 		System.out.println("number of sevens = "+count7);
 		System.out.println("number of eights = "+count8);
 		System.out.println("number of nines = "+count9);
+		System.out.println("");
 	}
 	
 	@Test
@@ -258,7 +256,7 @@ public class SudokuTest {
 				break;
 			default: count9++;
 				break;
-		}
+			}
 		}
 		System.out.println("number of ones = "+count1);
 		System.out.println("number of twos = "+count2);
@@ -270,5 +268,4 @@ public class SudokuTest {
 		System.out.println("number of eights = "+count8);
 		System.out.println("number of nines = "+count9);
 	}
-	*/
 }
